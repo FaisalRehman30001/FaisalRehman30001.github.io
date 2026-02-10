@@ -62,7 +62,7 @@
 }
 
 .footer-link:hover {
-  color: var(--accent-purple);
+  color: var(--accent-primary);
   padding-left: 8px;
 }
 

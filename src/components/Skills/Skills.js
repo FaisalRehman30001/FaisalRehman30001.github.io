@@ -29,7 +29,7 @@ const Skills = () => {
         { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
         { name: 'Express.js', icon: <SiExpress />, color: '#ffffff' },
         { name: 'Socket.IO', icon: <SiSocketdotio />, color: '#ffffff' },
-        { name: 'RESTful APIs', icon: <FaDatabase />, color: '#9b5de5' },
+        { name: 'RESTful APIs', icon: <FaDatabase />, color: '#00d4ff' },
       ],
     },
     {

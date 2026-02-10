@@ -91,7 +91,7 @@
 }
 
 a.info-value:hover {
-  color: var(--accent-purple);
+  color: var(--accent-primary);
 }
 
 .social-section {
@@ -186,8 +186,8 @@ a.info-value:hover {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--accent-purple);
-  box-shadow: 0 0 0 3px rgba(155, 93, 229, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
 }
 
 .form-group textarea {
@@ -212,7 +212,7 @@ a.info-value:hover {
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(155, 93, 229, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
 }
 
 .submit-btn:disabled {

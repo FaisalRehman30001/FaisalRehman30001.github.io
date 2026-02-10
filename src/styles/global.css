@@ -8,16 +8,16 @@
 
 :root {
   --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-card: rgba(30, 30, 50, 0.6);
+  --bg-secondary: #0f1419;
+  --bg-card: rgba(20, 35, 50, 0.6);
   --text-primary: #ffffff;
-  --text-secondary: #a0a0b0;
-  --accent-purple: #9b5de5;
-  --accent-pink: #f15bb5;
-  --accent-gradient: linear-gradient(135deg, #9b5de5 0%, #f15bb5 100%);
+  --text-secondary: #8b9cad;
+  --accent-primary: #00d4ff;
+  --accent-secondary: #0099cc;
+  --accent-gradient: linear-gradient(135deg, #00d4ff 0%, #0077b6 100%);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
-  --shadow-glow: 0 0 60px rgba(155, 93, 229, 0.3);
+  --shadow-glow: 0 0 60px rgba(0, 212, 255, 0.3);
 }
 
 html {
@@ -92,7 +92,7 @@ img {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(155, 93, 229, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
 }
 
 .btn-secondary {
@@ -104,14 +104,14 @@ img {
   color: var(--text-primary);
   font-size: 0.95rem;
   font-weight: 600;
-  border: 2px solid var(--accent-purple);
+  border: 2px solid var(--accent-primary);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: var(--accent-purple);
-  box-shadow: 0 10px 30px rgba(155, 93, 229, 0.3);
+  background: var(--accent-primary);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
 }
 
 /* Glow effects */
@@ -119,7 +119,7 @@ img {
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(155, 93, 229, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -134,12 +134,12 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-purple);
+  background: var(--accent-primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-pink);
+  background: var(--accent-secondary);
 }
 
 /* Animations */
@@ -174,10 +174,10 @@ img {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(155, 93, 229, 0.3);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(155, 93, 229, 0.5);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
   }
 }
 

@@ -29,7 +29,7 @@
 
 .skill-category:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(155, 93, 229, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 212, 255, 0.15);
 }
 
 .category-title {
@@ -60,7 +60,7 @@
 
 .skill-item:hover {
   border-color: var(--skill-color);
-  box-shadow: 0 4px 15px rgba(155, 93, 229, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
   transform: translateY(-2px);
 }
 
@@ -116,8 +116,8 @@
 
 .soft-skill-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(155, 93, 229, 0.2);
-  border-color: var(--accent-purple);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+  border-color: var(--accent-primary);
 }
 
 .soft-skill-emoji {

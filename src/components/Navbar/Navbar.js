@@ -5,13 +5,32 @@ import './Navbar.css';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Track active section
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offsetTop = section.offsetTop;
+          const offsetBottom = offsetTop + section.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -44,7 +63,7 @@ const Navbar = () => {
             <a
               key={index}
               href={link.href}
-              className="nav-link"
+              className={`nav-link ${activeSection === link.href.slice(1) ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
               {link.name}

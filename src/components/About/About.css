@@ -53,7 +53,7 @@
 
 .highlight-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(155, 93, 229, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
 }
 
 .highlight-number {
@@ -89,7 +89,7 @@
 
 .about-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(155, 93, 229, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
 }
 
 .card-icon {
