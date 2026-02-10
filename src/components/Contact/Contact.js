@@ -1,0 +1,213 @@
+import React, { useState } from 'react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
+import './Contact.css';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    try {
+      // Create mailto link as fallback
+      const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      const mailtoLink = `mailto:faisalrehman30003@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoLink;
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
+  };
+
+  const contactInfo = [
+    {
+      icon: <FaEnvelope />,
+      label: 'Email',
+      value: 'faisalrehman30003@gmail.com',
+      link: 'mailto:faisalrehman30003@gmail.com',
+    },
+    {
+      icon: <FaPhone />,
+      label: 'Phone',
+      value: '+92 321 5052842',
+      link: 'tel:+923215052842',
+    },
+    {
+      icon: <FaMapMarkerAlt />,
+      label: 'Location',
+      value: 'Rawalpindi, Pakistan',
+      link: null,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <FaGithub />,
+      name: 'GitHub',
+      url: 'https://github.com/FaisalRehman30001',
+    },
+    {
+      icon: <FaLinkedin />,
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/faisalurrehman30001',
+    },
+  ];
+
+  return (
+    <section id="contact" className="contact section">
+      <div className="container">
+        <h2 className="section-title">Get In Touch</h2>
+        
+        <div className="contact-intro">
+          <p>
+            I'm currently looking to join a cross-functional team that values improving 
+            people's lives through accessible design, or have a project in mind? Let's connect.
+          </p>
+        </div>
+        
+        <div className="contact-content">
+          <div className="contact-info">
+            <h3 className="info-title">Contact Information</h3>
+            
+            <div className="info-items">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="info-item">
+                  <div className="info-icon">{info.icon}</div>
+                  <div className="info-details">
+                    <span className="info-label">{info.label}</span>
+                    {info.link ? (
+                      <a href={info.link} className="info-value">{info.value}</a>
+                    ) : (
+                      <span className="info-value">{info.value}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="social-section">
+              <h4 className="social-title">Follow Me</h4>
+              <div className="social-links">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link-item"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <h3 className="form-title">Send Me a Message</h3>
+            
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="What's this about?"
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your message..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            
+            <button 
+              type="submit" 
+              className="submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                'Sending...'
+              ) : (
+                <>
+                  <FaPaperPlane />
+                  Send Message
+                </>
+              )}
+            </button>
+            
+            {submitStatus === 'success' && (
+              <p className="submit-message success">Opening email client...</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="submit-message error">Something went wrong. Please try again.</p>
+            )}
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
