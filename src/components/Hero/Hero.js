@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-greeting">
             <span className="greeting-wave">👋</span>
-            <span className="greeting-text">Hello! I Am <span className="gradient-text">Faisal Ur Rehman</span></span>
+            <span className="greeting-text">Hello! I am <span className="gradient-text">Faisal Ur Rehman</span></span>
           </div>
           
           <div className="hero-tagline">

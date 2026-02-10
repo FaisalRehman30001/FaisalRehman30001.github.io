@@ -27,7 +27,8 @@ const Contact = () => {
     // Simulate form submission
     try {
       // Create mailto link as fallback
-      const mailtoLink = `mailto:faisalrehman30003@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+      const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      const mailtoLink = `mailto:faisalrehman30003@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
       window.location.href = mailtoLink;
       
       setSubmitStatus('success');
