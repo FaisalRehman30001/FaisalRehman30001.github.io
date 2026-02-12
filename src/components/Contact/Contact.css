@@ -235,26 +235,65 @@ a.info-value:hover {
   color: #ff5f57;
 }
 
-@media (max-width: 1024px) {
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
-  
+
   .contact-info {
+    order: 1;
+  }
+
+  .contact-form {
     order: 2;
   }
-  
+
+  .contact-info,
   .contact-form {
-    order: 1;
+    padding: 32px;
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile: below 768px */
+@media (max-width: 767px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-info {
+    order: 1;
+    padding: 28px 20px;
+  }
+
+  .contact-form {
+    order: 2;
+    padding: 28px 20px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 0;
   }
-  
+
+  .contact-intro {
+    margin-bottom: 40px;
+  }
+
   .contact-intro p {
     font-size: 1rem;
+  }
+
+  .info-title,
+  .form-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px 24px;
   }
 }
