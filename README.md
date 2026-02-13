@@ -1,3 +1,45 @@
+# Faisal Ur Rehman Portfolio
+
+A React-based portfolio website deployed on GitHub Pages with a custom domain.
+
+**Live Site:** [https://faisalurrehman.me](https://faisalurrehman.me)
+
+## SSL/HTTPS Configuration
+
+This site uses HTTPS via GitHub Pages with a custom domain. To ensure SSL works properly:
+
+### DNS Configuration (at your domain registrar)
+
+Configure the following DNS records for your domain:
+
+**A Records** (for apex domain `faisalurrehman.me`):
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+**CNAME Record** (optional, for www subdomain):
+```
+www.faisalurrehman.me -> FaisalRehman30001.github.io
+```
+
+### GitHub Repository Settings
+
+1. Go to **Settings** → **Pages**
+2. Under "Custom domain", verify `faisalurrehman.me` is set
+3. Check **"Enforce HTTPS"** checkbox to enable SSL
+
+### Verification
+
+After DNS propagation (may take up to 24-48 hours):
+- GitHub automatically provisions an SSL certificate via Let's Encrypt
+- All HTTP requests will be redirected to HTTPS
+- The site includes a Content-Security-Policy that upgrades insecure requests
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
