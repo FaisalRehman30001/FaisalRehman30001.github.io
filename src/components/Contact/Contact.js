@@ -46,17 +46,19 @@ const Contact = () => {
         templateParams
       );
 
-      // Send auto-reply email to the user
-      await emailjs.send(
+      // Send auto-reply email to the user (non-blocking)
+      // If this fails, the main message was still delivered
+      emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_AUTOREPLY_TEMPLATE_ID,
         templateParams
-      );
+      ).catch(() => {
+        // Auto-reply failed silently - main message was still sent
+      });
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS Error:', error);
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
