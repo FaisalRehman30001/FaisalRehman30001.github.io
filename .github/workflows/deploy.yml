@@ -35,7 +35,11 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --prefer-offline --no-audit
+
+      - name: Security audit (informational)
+        run: npm audit --audit-level=critical || true
+        continue-on-error: true
 
       - name: Build
         env:
