@@ -96,7 +96,7 @@ const Contact = () => {
     {
       icon: <FaLinkedin />,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/faisalurrehman30001',
+      url: 'https://www.linkedin.com/in/faisalurrehman30003/',
     },
   ];
 
