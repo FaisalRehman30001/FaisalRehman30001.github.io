@@ -3,7 +3,7 @@ import {
   FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaStripe, FaHtml5, FaCss3Alt, FaJs, FaBootstrap
 } from 'react-icons/fa';
 import { 
-  SiNextdotjs, SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiMui, SiSocketdotio, SiMysql, SiSass
+  SiNextdotjs, SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiMui, SiTypescript, SiSocketdotio, SiMysql, SiReactquery, SiSass
 } from 'react-icons/si';
 import './Skills.css';
 
@@ -14,6 +14,7 @@ const Skills = () => {
       skills: [
         { name: 'React JS', icon: <FaReact />, color: '#61DAFB' },
         { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff' },
+        { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
         { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
         { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
         { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
@@ -28,7 +29,7 @@ const Skills = () => {
       skills: [
         { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
         { name: 'Express.js', icon: <SiExpress />, color: '#ffffff' },
-        { name: 'Socket.IO', icon: <SiSocketdotio />, color: '#ffffff' },
+        { name: 'Socket.IO', icon: <SiSocketdotio />, color: '#010101' },
         { name: 'RESTful APIs', icon: <FaDatabase />, color: '#00d4ff' },
       ],
     },
@@ -37,13 +38,14 @@ const Skills = () => {
       skills: [
         { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
         { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
-        { name: 'SQL', icon: <FaDatabase />, color: '#FF6B6B' },
+        { name: 'SQL', icon: <FaDatabase />, color: '#336791' },
       ],
     },
     {
       title: 'State Management & Tools',
       skills: [
         { name: 'Redux Toolkit', icon: <SiRedux />, color: '#764ABC' },
+        { name: 'React Query', icon: <SiReactquery />, color: '#FF4154' },
         { name: 'GitHub', icon: <FaGitAlt />, color: '#F05032' },
         { name: 'Stripe', icon: <FaStripe />, color: '#008CDD' },
       ],

@@ -70,7 +70,7 @@ const Navbar = () => {
             </a>
           ))}
           <a 
-            href="/Faisal Ur Rehman CV updated.pdf" 
+            href="/Faisal Ur Rehman CV.pdf" 
             className="btn-resume"
             target="_blank"
             rel="noopener noreferrer"

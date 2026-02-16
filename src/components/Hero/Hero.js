@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import profileImage from '../../assets/images/profileImage/profileImage.jpeg';
 import './Hero.css';
 
 const Hero = () => {
@@ -27,15 +28,15 @@ const Hero = () => {
           </div>
           
           <h2 className="hero-subtitle">
-            I'm a <span className="typing-text">React JS Developer</span>
+            I'm a <span className="typing-text">Full Stack Developer</span>
           </h2>
           
           <p className="hero-current">
-            Currently, I'm a Software Developer at <a href="https://owasoft.com" target="_blank" rel="noopener noreferrer" className="company-link">Owasoft Technologies</a>
+            Currently, I'm a Software Developer at <a href="https://owasofttechnologies.com/" target="_blank" rel="noopener noreferrer" className="company-link">Owasoft Technologies</a>
           </p>
           
           <p className="hero-description">
-            An experienced React Developer with expertise in building responsive, high-performance 
+            An experienced Full Stack Developer with expertise in building responsive, high-performance 
             web applications. I create meaningful and delightful digital products that balance 
             user needs with business goals.
           </p>
@@ -53,7 +54,7 @@ const Hero = () => {
             <a href="https://github.com/FaisalRehman30001" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/faisalurrehman30001" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/faisalurrehman30003/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
             <a href="mailto:faisalrehman30003@gmail.com" className="social-link" aria-label="Email">
@@ -66,7 +67,7 @@ const Hero = () => {
           <div className="avatar-container">
             <div className="avatar-glow"></div>
             <div className="avatar">
-              <span className="avatar-emoji">👨‍💻</span>
+              <img src={profileImage} alt="Faisal Ur Rehman" className="avatar-image" />
             </div>
           </div>
         </div>
