@@ -1,7 +1,13 @@
 import React from 'react';
 import { FaExternalLinkAlt, FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiMongodb, SiTailwindcss, SiMui, SiRedux, SiBootstrap, SiSass, SiSocketdotio, SiStripe } from 'react-icons/si';
+import { SiMongodb, SiTailwindcss, SiMui, SiRedux, SiBootstrap, SiSass, SiSocketdotio, SiStripe, SiNextdotjs, SiPostgresql, SiPrisma, SiTypescript } from 'react-icons/si';
 import './Projects.css';
+
+// Import project logos
+import inkedFlowLogo from '../../assets/images/projectsLogoes/inkedFlowLogo.png';
+import mediDiscountsLogo from '../../assets/images/projectsLogoes/mediDiscountsLogo.png';
+import piddoPortalLogo from '../../assets/images/projectsLogoes/piddoPortalLogo.png';
+import sagaticaLogo from '../../assets/images/projectsLogoes/sagaticaLogo.png';
 
 const Projects = () => {
   const projects = [
@@ -23,6 +29,63 @@ const Projects = () => {
         { name: 'Material UI', icon: <SiMui /> },
       ],
       featured: true,
+      logo: inkedFlowLogo,
+    },
+    {
+      title: 'Piddo Portal',
+      category: 'Food Ordering & Restaurant Management',
+      description: 'A complete food ordering solution with Admin, Vendor, and Customer portals. Features menu management, order processing, real-time notifications, and multi-vendor support.',
+      highlights: [
+        'Multi-vendor restaurant management',
+        'Real-time order tracking',
+        'Payment integration',
+        'Admin dashboard analytics',
+      ],
+      technologies: [
+        { name: 'Next.js', icon: <SiNextdotjs /> },
+        { name: 'TypeScript', icon: <SiTypescript /> },
+        { name: 'PostgreSQL', icon: <SiPostgresql /> },
+        { name: 'Prisma', icon: <SiPrisma /> },
+        { name: 'Tailwind', icon: <SiTailwindcss /> },
+      ],
+      featured: true,
+      logo: piddoPortalLogo,
+    },
+    {
+      title: 'MediDiscounts',
+      category: 'Healthcare Discount Platform',
+      description: 'A healthcare platform connecting users with discounted medical services. Features provider listings, discount management, and user subscription systems.',
+      highlights: [
+        'Healthcare provider directory',
+        'Discount card management',
+        'Subscription plans',
+        'Admin & user portals',
+      ],
+      technologies: [
+        { name: 'React', icon: <FaReact /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'Material UI', icon: <SiMui /> },
+      ],
+      featured: true,
+      logo: mediDiscountsLogo,
+    },
+    {
+      title: 'Sagatica',
+      category: 'Enterprise Solution',
+      description: 'An enterprise application with Admin, Employee, and Client portals for comprehensive business management.',
+      highlights: [
+        'Three separate portals',
+        'Role-based navigation',
+        'Form validation with Formik',
+      ],
+      technologies: [
+        { name: 'React', icon: <FaReact /> },
+        { name: 'Bootstrap', icon: <SiBootstrap /> },
+        { name: 'SCSS', icon: <SiSass /> },
+      ],
+      featured: false,
+      logo: sagaticaLogo,
     },
     {
       title: 'Doc Manager',
@@ -41,7 +104,7 @@ const Projects = () => {
         { name: 'MongoDB', icon: <SiMongodb /> },
         { name: 'Socket.IO', icon: <SiSocketdotio /> },
       ],
-      featured: true,
+      featured: false,
     },
     {
       title: 'VE-Toolkit',
@@ -56,22 +119,6 @@ const Projects = () => {
         { name: 'React', icon: <FaReact /> },
         { name: 'Material UI', icon: <SiMui /> },
         { name: 'Tailwind', icon: <SiTailwindcss /> },
-        { name: 'SCSS', icon: <SiSass /> },
-      ],
-      featured: false,
-    },
-    {
-      title: 'Sagatica',
-      category: 'Enterprise Solution',
-      description: 'An enterprise application with Admin, Employee, and Client portals for comprehensive business management.',
-      highlights: [
-        'Three separate portals',
-        'Role-based navigation',
-        'Form validation with Formik',
-      ],
-      technologies: [
-        { name: 'React', icon: <FaReact /> },
-        { name: 'Bootstrap', icon: <SiBootstrap /> },
         { name: 'SCSS', icon: <SiSass /> },
       ],
       featured: false,
@@ -132,8 +179,14 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="mockup-content">
-                    <div className="mockup-icon">🚀</div>
-                    <p className="mockup-title">{project.title}</p>
+                    {project.logo ? (
+                      <img src={project.logo} alt={`${project.title} Logo`} className="project-logo" />
+                    ) : (
+                      <>
+                        <div className="mockup-icon">🚀</div>
+                        <p className="mockup-title">{project.title}</p>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -166,7 +219,11 @@ const Projects = () => {
           {otherProjects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="card-header">
-                <span className="card-icon">📁</span>
+                {project.logo ? (
+                  <img src={project.logo} alt={`${project.title} Logo`} className="card-logo" />
+                ) : (
+                  <span className="card-icon">📁</span>
+                )}
                 <FaExternalLinkAlt className="card-link-icon" />
               </div>
               <h4 className="card-title">{project.title}</h4>

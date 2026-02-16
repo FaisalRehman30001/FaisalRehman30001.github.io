@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import profileImage from '../../assets/images/profileImage/profileImage.jpeg';
 import './Hero.css';
 
 const Hero = () => {
@@ -66,7 +67,7 @@ const Hero = () => {
           <div className="avatar-container">
             <div className="avatar-glow"></div>
             <div className="avatar">
-              <span className="avatar-emoji">👨‍💻</span>
+              <img src={profileImage} alt="Faisal Ur Rehman" className="avatar-image" />
             </div>
           </div>
         </div>
