@@ -184,10 +184,6 @@
     text-align: left;
   }
   
-  .featured-project.reverse .project-description-box {
-    text-align: left;
-  }
-  
   .featured-project.reverse .project-technologies {
     justify-content: flex-start;
   }
