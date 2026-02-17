@@ -29,18 +29,12 @@
   text-align: right;
 }
 
+.featured-project.reverse .project-description-box {
+  text-align: left;
+}
+
 .featured-project.reverse .project-technologies {
   justify-content: flex-end;
-}
-
-.featured-project.reverse .project-highlights {
-  padding-left: 0;
-  padding-right: 20px;
-}
-
-.featured-project.reverse .project-highlights li::before {
-  left: auto;
-  right: 0;
 }
 
 .project-visual {
@@ -190,18 +184,12 @@
     text-align: left;
   }
   
+  .featured-project.reverse .project-description-box {
+    text-align: left;
+  }
+  
   .featured-project.reverse .project-technologies {
     justify-content: flex-start;
-  }
-  
-  .featured-project.reverse .project-highlights {
-    padding-left: 20px;
-    padding-right: 0;
-  }
-  
-  .featured-project.reverse .project-highlights li::before {
-    left: 0;
-    right: auto;
   }
 }
 

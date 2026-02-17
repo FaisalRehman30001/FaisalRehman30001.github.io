@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiMongodb, SiTailwindcss, SiMui, SiBootstrap, SiSass, SiStripe, SiNextdotjs, SiPostgresql, SiPrisma, SiTypescript } from 'react-icons/si';
+import { SiMongodb, SiMui, SiStripe, SiExpress, SiReactquery } from 'react-icons/si';
 import './Projects.css';
 
 // Import project images
@@ -41,11 +41,10 @@ const Projects = () => {
         'Admin dashboard analytics',
       ],
       technologies: [
-        { name: 'Next.js', icon: <SiNextdotjs /> },
-        { name: 'TypeScript', icon: <SiTypescript /> },
-        { name: 'PostgreSQL', icon: <SiPostgresql /> },
-        { name: 'Prisma', icon: <SiPrisma /> },
-        { name: 'Tailwind', icon: <SiTailwindcss /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'Express.js', icon: <SiExpress /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
       ],
       image: piddoImage,
     },
@@ -79,8 +78,10 @@ const Projects = () => {
       ],
       technologies: [
         { name: 'React', icon: <FaReact /> },
-        { name: 'Bootstrap', icon: <SiBootstrap /> },
-        { name: 'SCSS', icon: <SiSass /> },
+        { name: 'Material UI', icon: <SiMui /> },
+        { name: 'React Query', icon: <SiReactquery /> },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
       ],
       image: sagaticaImage,
     },
