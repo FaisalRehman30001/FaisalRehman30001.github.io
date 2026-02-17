@@ -30,7 +30,10 @@
   <body>
     <!-- HTTPS Redirect for non-secure connections -->
     <script>
-      if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      if (location.protocol !== 'https:' && 
+          location.hostname !== 'localhost' && 
+          location.hostname !== '127.0.0.1' &&
+          !location.hostname.endsWith('.local')) {
         location.replace('https:' + window.location.href.substring(window.location.protocol.length));
       }
     </script>
