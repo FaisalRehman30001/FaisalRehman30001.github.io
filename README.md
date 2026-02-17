@@ -43,6 +43,36 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 This portfolio uses [EmailJS](https://www.emailjs.com/) for the contact form functionality. You need to set up two templates in your EmailJS dashboard:
 
+## SSL/HTTPS Configuration
+
+This portfolio is configured to enforce HTTPS connections for security. The following measures are implemented:
+
+### Code-Level Security
+
+1. **Content Security Policy**: The `upgrade-insecure-requests` CSP directive automatically upgrades any HTTP requests to HTTPS.
+2. **Canonical URL**: A canonical link tag specifies the HTTPS version of the site.
+3. **HTTPS Redirect Script**: A JavaScript redirect ensures users accessing via HTTP are automatically redirected to HTTPS.
+
+### GitHub Pages Settings (Manual Step Required)
+
+To enable SSL/HTTPS enforcement on GitHub Pages:
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** > **Pages**
+3. Under "Custom domain", ensure your domain is set to `faisalurrehman.me`
+4. Check the **"Enforce HTTPS"** checkbox
+5. Wait for the SSL certificate to be provisioned (this may take a few minutes)
+
+**Note**: GitHub Pages automatically provisions and renews SSL certificates via Let's Encrypt for custom domains. Once "Enforce HTTPS" is enabled, all HTTP traffic will be redirected to HTTPS at the server level.
+
+### DNS Configuration
+
+Ensure your DNS records are properly configured:
+- For apex domain (`faisalurrehman.me`): Use A records pointing to GitHub Pages IPs
+- For www subdomain: Use a CNAME record pointing to your GitHub Pages URL
+
+For more details, see [GitHub's documentation on securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
+
 ### Required GitHub Secrets
 
 Add these secrets to your GitHub repository (Settings > Secrets and variables > Actions):
